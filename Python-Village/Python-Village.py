@@ -104,3 +104,39 @@ cricket_party[:2]
 ## it will give items with that index (in this case index 2) up untill the last index.
 cricket_party[2:]
 
+## we can also use negative indices to count items backtracking from the end of the list.
+
+cricket_party[-2:] # will give same output as cricket_party[3:]
+
+## python also give us the ability to slice the strings the same way we slice our lists.
+## a string can be considered as a list of characters, each of which having its own index starting from 0.
+
+a = 'flimsy'
+b = 'miserable'
+
+c = b[0:2] + a[3:]
+d = b[0:1] + a[2:]
+
+print (c)
+print (d)
+
+s = 'HumptyDumptysatonawallHumptyDumptyhadagreatfallAlltheKingshorsesandalltheKingsmenCouldntputHumptyDumptyinhisplaceagain.'
+a = 22
+b = 27
+c = 97
+d = 102
+
+print (s[a:(b+1)] + ' ' + s[c:(d+1)])
+
+## Problem
+
+s = 'uDXNNKvzzIwfVT9zyx66BEChenOClYHB7jsunSC1FJPugSC0k5ewVX6bLSeyGwIFn9JiURT6pHjCMpKfAIliI4gultturturmK94SpIP3c1kmPgEv71kNndH6sDgg6Ttw45rEQw6debUwXqnhfgBSuIWXAIbcm3mZq.'
+a = 22
+b = 25
+c = 90
+d = 95
+
+print (s[a:(b+1)] + ' ' + s[c:(d+1)])
+
+
+#################################################################################################################
