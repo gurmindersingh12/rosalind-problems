@@ -16,7 +16,7 @@ b = 24
 c = a - b
 print(c)
 
-print ("a - b is", c) 
+print ("a - b is", c)
 
 addition = 2 + 3 == 5
 print('addition is', addition)
@@ -32,12 +32,15 @@ print('multiplication is', multiplication)
 divison = 15 / 3 == 5
 print('divison is', divison)
 
+divison1 = 18 / 5 == 3
+print('divison1 is', divison1)
+
+#or
+# use 18.0/5 or float(18)/5 for precise results
 
 division_remainder = 18 % 5 == 3
 print('divison_remainder is', division_remainder)
 
-division_remainder1 = float(18) % 5 == 3
-print('divison_remainder1 is', division_remainder1)
 
 exponentiation = 2 ** 3 == 8
 print('exponentiation is', exponentiation)
