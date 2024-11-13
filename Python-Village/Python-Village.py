@@ -45,3 +45,37 @@ print('divison_remainder is', division_remainder)
 exponentiation = 2 ** 3 == 8
 print('exponentiation is', exponentiation)
 
+a = "Hello"
+b ="World"
+
+print (a, b)
+
+a = 'Rosalind'
+b = 'Franklin'
+
+c = '!'
+
+print (a, b, c*3)
+print (a + ' ' + b + c*3) 
+
+## Problem
+
+a = 3
+b = 5
+c = (a**2) + (b**2)
+
+print (c)
+
+a = 924
+b =  877
+
+c = (a**2) + (b**2)
+
+print (c)
+
+
+############################################################################################################
+
+
+## ID: INI3 (String and Lists)
+
