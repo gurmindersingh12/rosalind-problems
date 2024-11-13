@@ -79,3 +79,28 @@ print (c)
 
 ## ID: INI3 (String and Lists)
 
+cricket_party = ['March Hare', 'Hatter', 'Darmouse', 'Alice']
+print (cricket_party[2])
+
+cricket_party[1] = 'Kohli'
+
+print (cricket_party)
+
+cricket_party.append('Rohit')
+
+print (cricket_party)
+
+## to obtain only some from the list
+
+cricket_party[0:2]  ## it will only show entries from 0 up to but not including 2.
+## this process is called 'list slicing'
+
+
+## if first index of the slice is unspecified, then Python assumes that the slice begins with the beginning of the list (i.e., index 0)
+## but still it will give up to but not including that number ( in this case index 2)
+cricket_party[:2]
+
+## if second index of the slice is unspeciifed, then we will obtain items till the end of the list.
+## it will give items with that index (in this case index 2) up untill the last index.
+cricket_party[2:]
+
