@@ -158,3 +158,75 @@ b = -1
 if a + b == 4:
     print ('printed when a + b equals four')
 print ('always printed')
+
+## if we want to repeat an action several times, we can use while loop.
+
+g = 1
+while g <=3:
+    print ('Hello! ' *g) # multiply the string 'Hello! ' with g.
+    g =  g + 1 #this line will increment the value of g by 1 in each line untill 3.
+
+    ## dont type g = g + 0; beacsue it will create infinite loop.
+
+
+## if we want to carry out some actions on every element of a list, the 'for' loop will be handy.
+
+names = ['Alice', 'Bob', 'Charley']
+for name in names:
+    print ('Hello, ' + name)
+
+## and if we want to repeat an action exactly n times, we can use the following template;
+
+n = 10
+for i in range(n):
+    print (i)
+
+## in the above code, 'range' is a function that creates a list of integers betweeen 0 and n, where n is not included.
+
+print (range(5, 12))
+## in Python2, above code will print [5, 6, 7, 8, 9, 10, 11]
+
+## for Python 3
+
+print (list(range(5,12)))
+
+## print numbers from 5 to 11, not including the 12.
+
+## Problem
+
+a = 100
+b = 200
+
+# Initialize the sum
+total = 0
+
+# Iterate through the range from a to b (inclusive)
+for num in range(a, b + 1):
+    if num % 2 == 1:  # Check if the number is odd
+        total += num
+
+print(total)
+
+
+## dataset
+
+a = 4323 
+b = 8718
+
+# Initialize the sum
+total = 0
+## this code will initaite a variable 'total' to zero.
+## 'total' will be used to accumulate the sum of all odd numbers within the range.
+## at the start, we set it to zero because no numbers have been added yet.
+
+# Iterate through the range from a to b (inclusive)
+for num in range(a, b + 1): ## this is a for loop that will iterates over all integers from "a" to "b"
+                            ## "range(a, b+1)" will generate a sequence of number starting at "a" and end at "b" (since b+1 is excluded)
+                            ## the variable "num" takes on each value in this sequence at a time.
+    if num % 2 == 1:    ## this conditional statement Check if the number is odd
+                        ## if the remainder is 1, that menas it is a odd number
+        total += num    ## "total += num" is a shorthand for total = total + num
+                        ## if the condition "num % 2 == 1" is true (i.e., number is odd), this line adds the current value to "num" to "total"
+                        ## over the course of the loop, this accumulates the sum of all odd numbers in the range.
+
+print(total)
