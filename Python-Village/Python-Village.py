@@ -140,3 +140,21 @@ print (s[a:(b+1)] + ' ' + s[c:(d+1)])
 
 
 #################################################################################################################
+
+
+## ID: INI4 (Conditions and Loops)
+
+# if we need to choose between two actions, then we can use an 'if' or 'else' statements.
+
+a = 42
+if a<10:
+    print ('the number is than 10')
+else:
+    print ('the number is greater or equal to 10')
+
+
+a = 5
+b = -1
+if a + b == 4:
+    print ('printed when a + b equals four')
+print ('always printed')
