@@ -363,4 +363,44 @@ with open("input.txt", 'r') as f:
         if (i + 1) % 2 == 0:
             print(lines[i])
 
-###########################################################################################################################################
+
+###########################################
+####### Explanation of above code #########
+###########################################
+
+## The 'with' statement ensures that the file is automatically closed when the block is exited, 
+## even if an error occurs. You don’t need to call 'f.close()' manually. 
+
+## Opens the file named 'input.txt' in read mode ('r').
+## The file object is stored in the variable 'f'.
+
+## 'lines = f.readlines()' Reads all the lines from the file and stores them as a list of strings in the variable lines.
+## Each element in the list represents one line from the file, including the newline character \n at the end of each line.
+## for example, If input.txt contains:
+# Line1
+# Line2
+# Line3
+# Line4
+### then 'lines' will be:
+# ['Line1\n', 'Line2\n', 'Line3\n', 'Line4\n']
+
+
+## 'for i in range(len(lines)):' The range(len(lines)) generates a sequence of numbers from 0 to len(lines) - 1 (the indices of the list lines).
+## i is the index of the current line in the lines list during each iteration.
+## Example: For the above 'lines' (Line 1 to Line 4), 'range(len(lines))' will give:
+# [0, 1, 2, 3]
+
+
+## if (i + 1) % 2 == 0: (i + 1) adjusts the index i (0-based) to 1-based numbering because line numbers typically start at 1.
+## % 2 == 0 checks if the 1-based line number is even.
+
+## Example: When i = 0, i + 1 = 1 (odd, skipped). And When i = 1, i + 1 = 2 (even, included).
+
+## print(lines[i]): Prints the content of the line at index i from the lines list if its line number is even.
+
+
+
+
+
+############################################################################################################################
+
