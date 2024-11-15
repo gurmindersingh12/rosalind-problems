@@ -291,3 +291,11 @@ for line in f:
 
 'Simple is\nbetter than\ncomplex.\n'.splitlines()
 
+## after finishing all the calculation we need to save it.
+## to save a file, output the desired file in write mode (if there is no such file, it will be created automatically)
+
+f = open('output.txt', 'w')
+
+## we can also write the data using .write() method
+
+f.write('Any data that we want to write into the file')
