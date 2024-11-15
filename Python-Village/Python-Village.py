@@ -299,3 +299,38 @@ f = open('output.txt', 'w')
 ## we can also write the data using .write() method
 
 f.write('Any data that we want to write into the file')
+f.close()
+## when we are finished writing file, we must close it using command f.close()
+
+## the command f.write(string) write the contents of string to file f.
+## if we want to write something other than a string (an integer say), we must first
+## convert it to string by using the function str().
+
+
+f = open('output.txt', 'w')
+
+f.write('Any data that we want to write into the file')
+
+inscription = ['Rosalind Elsie Franklin', 1920, 1958]
+s = str(inscription)
+f.write(s)
+f.close()
+
+f = open('output.txt', 'w')
+
+f.write('Any data that we want to write into the file\n')
+
+inscription = ['Rosalind Elsie Franklin', 1920, 1958]
+s = str(inscription)
+
+## we can write items into the file one at a time by using a "for" loop
+
+for i in inscription:
+    f.write(str(i) + '\n')
+
+## adding '\n'to str(i) means that every item will start with a new line.
+f.close()
+
+
+## Problem
+
