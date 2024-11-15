@@ -267,3 +267,27 @@ f = open("input.txt", 'r')
 for line in f:
     print (line)
 
+## using this above loop, we can do anything we need with every line in the file.
+
+## if the data in the file is not separated by new lines but rathe rby whitespace, commas, or any other delimeter, 
+## then all three commands above will return the data only in the form of lines. As a workaround, we can use the command line.split().
+## it uses whitespace in addition \n as delimeters by default, and runs of the same delimeter are regarded as a single
+## separting space.
+
+## For example,
+
+'Beautiful is better than ugly.\n'.split()
+
+'Beautiful is better than ugly.'.split()
+
+## we can also specify the delimeter as a parameter of line.split():
+
+'Explicit, is better, than implicit.'.split(",")
+
+'Explicit, is better, than implicit.'.split() ## this uses whitespace to split
+
+## another convenient command for file parsing is .splitlines(). it returns a list of the lines in the 
+## string, breaking at the line boundaries. Line breaks are not included.
+
+'Simple is\nbetter than\ncomplex.\n'.splitlines()
+
