@@ -230,3 +230,40 @@ for num in range(a, b + 1): ## this is a for loop that will iterates over all in
                         ## over the course of the loop, this accumulates the sum of all odd numbers in the range.
 
 print(total)
+
+#################################################################################################################################
+
+## ID: INI5 (Working with files)
+
+## Reading and Writing
+
+## we will work with lot of files from rosalind.info, to analyze our datasets
+
+## usually we need to open the file first. to do that we canuse open() function
+## open() function usually takes two parameters: the name of the target file and the mode.
+## three modes are available:
+
+# r = read mode (file is opened for reading)
+# w = write mode (the file is opened for writing, and if the file having the same name exits, it will be erased)
+# a = append mode (the file is opened for appending, which means that data is only to be added to the existing data in the file)
+
+f = open("input.txt", 'r')
+## the above code line told python to open the file 'input.txt' in 'r' mode and store the result of this operation in a file object called 'f'
+
+## to obtain data from the file object we created, we can apply following methods:
+
+## the command f.read(n) return n bytes of the data from the file as a string. when the size parameter is omitted, the entire contents of the file will be read and returned.
+
+## the command f.readline() takes a single line from the file. Every line (except the last line of the file) terminates in a 
+## newline character (\n). To remove this character fromt he end of a line you have read, use the .strip()  method.
+## Note that every time you call .readline() it takes the next line in the file.
+
+
+## the command f.readlines() returns a list containing every line in the file. If we need to obtain a particular line, we can use a 
+## list item index, e.g., f.readlines()[2] returns the third line of the file object f.
+
+## an alternative way to read lines is to loop over the file object.
+
+for line in f:
+    print (line)
+
