@@ -334,3 +334,20 @@ f.close()
 
 ## Problem
 
+f = open("input.txt", 'w')
+
+f.write('Bravely bold Sir Robin rode forth from Camelot\nYes, brave Sir Robin turned about\nHe was not afraid to die, O brave Sir Robin\nAnd gallantly he chickened out\nHe was not at all afraid to be killed in nasty ways\nBravely talking to his feet\nBrave, brave, brave, brave Sir Robin\nHe beat a very brave retreat\n')
+
+f.close()
+
+f = open("input.txt", 'r')
+
+
+with open("input.txt", 'r') as f:
+    lines = f.readlines()
+    for i in range(len(lines)):
+        if (i + 1) % 2 == 0:
+            print(lines[i])
+
+
+f.close()
