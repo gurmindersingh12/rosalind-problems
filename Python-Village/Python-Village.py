@@ -403,4 +403,48 @@ with open("input.txt", 'r') as f:
 
 
 ############################################################################################################################
+############################################################################################################################
 
+
+
+### ID: INI6 (Dictionaries)
+
+##### Intro to Python Dictionary
+
+## We have already discussed and used lists and strings to store and process data.
+## Python also has a variable type called a "dictionary" that is similar to a list, but instead
+## of having integer indices, we provide our own index, which we called a "key".
+## we can assign data to dictionary as follows:
+## phones = {'Zoe':'232-43-58', 'Alice':'165-88-56'}
+## we can therefore think of a dictionary as a "function" that maps a collection of keys to the values. As with lists, the values of the 
+## list can of any type: strings, integers, floating point numbers, even lists or dictionaries themselves.
+## for keys we can use only strings, numbers, floats, and other immutable types (an immutable data type is a type whose value cannot be 
+## changed after it's created. If you try to modify an immutable object, a new object is created with the modified value).
+## Accessing values of a dictionary is also similar to accessing values of a list:
+
+phones = {'Zoe':'232-43-58', 'Alice':'165-88-56'}
+print(phones['Zoe'])
+
+## the output after above code was 232-43-58
+
+
+## we can also add new values to a dictionary or assign a new value to an existing key can also be done as follows:
+
+phones['Zoe'] = '655-99-55'
+
+phones['Bill'] = '342-18-25'
+
+print(phones)
+
+phones['myself'] = '123-45-67'
+
+print(phones)
+
+### Dictionaries are usually case-sensitive if we are using strings as keys. For example, 'key' and 'Key' are viewed as different keys:
+
+d = {}
+d['KeY'] = 0
+d['key'] = 1
+d['Key'] = 2
+d['KEY'] = 3
+print(d)
