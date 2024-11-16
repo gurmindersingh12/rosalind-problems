@@ -509,6 +509,15 @@ for word in words:
     else:
         word_count[word] = 1
 
+## 'word_count' is a dictionary that keeps track of word counts.
+
+## The 'in' keyword checks for the presence of 'word' in the dictionary keys.
+## If 'word' exists as a key, the condition evaluates to 'True'.
+## If 'word' does not exist, the condition evaluates to 'False'.
+
+## word_count[word] += 1
+
+## If the word already exists in the dictionary, increment its count by 1.
 
 ## output the word counts
 
@@ -550,4 +559,6 @@ for word in words:
 
 for key, value in word_count.items():
     print (key, value)
+
+######################################################################################################################
 
