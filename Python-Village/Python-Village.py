@@ -519,3 +519,35 @@ for key, value in word_count.items():
 ## The for loop iterates through these pairs.
 ## The print(key, value) statement displays each word and its count.
 
+
+
+s = 'When I find myself in times of trouble Mother Mary comes to me Speaking words of wisdom let it be And in my hour of darkness she is standing right in front of me Speaking words of wisdom let it be Let it be let it be let it be let it be Whisper words of wisdom let it be And when the broken hearted people living in the world agree There will be an answer let it be For though they may be parted there is still a chance that they will see There will be an answer let it be Let it be let it be let it be let it be There will be an answer let it be Let it be let it be let it be let it be Whisper words of wisdom let it be Let it be let it be let it be let it be Whisper words of wisdom let it be And when the night is cloudy there is still a light that shines on me Shine until tomorrow let it be I wake up to the sound of music Mother Mary comes to me Speaking words of wisdom let it be Let it be let it be let it be yeah let it be There will be an answer let it be Let it be let it be let it be yeah let it be Whisper words of wisdom let it be'
+
+## create an empty dictionary to store word counts
+
+word_count = {}
+
+## split the string into words
+
+words = s.split()
+
+## The 'split()' method splits the string s into a list of words.
+## By default, 'split()' separates the string at spaces.
+
+print (words)
+
+
+## count occurences of each word
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+
+## output the word counts
+
+for key, value in word_count.items():
+    print (key, value)
+
