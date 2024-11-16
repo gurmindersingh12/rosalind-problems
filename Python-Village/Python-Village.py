@@ -483,4 +483,39 @@ print (phones)
 
 ## output is: {'Alice': '165-88-56', 'Bill': '342-18-25', 'myself': '123-45-67'}
 
-s = {'We tried list and we tried dicts also we tried Zen'}
+
+# input string
+s = 'We tried list and we tried dicts also we tried Zen'
+
+## create an empty dictionary to store word counts
+
+word_count = {}
+
+## split the string into words
+
+words = s.split()
+
+## The 'split()' method splits the string s into a list of words.
+## By default, 'split()' separates the string at spaces.
+
+print (words)
+
+
+## count occurences of each word
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+
+## output the word counts
+
+for key, value in word_count.items():
+    print (key, value)
+
+## word_count.items() gives each key-value pair (word and its count) in the dictionary.
+## The for loop iterates through these pairs.
+## The print(key, value) statement displays each word and its count.
+
