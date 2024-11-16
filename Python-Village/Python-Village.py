@@ -448,3 +448,39 @@ d['key'] = 1
 d['Key'] = 2
 d['KEY'] = 3
 print(d)
+
+
+### Note how we created an empty dictionary with 'd = {}'.
+## this could be useful in case we need to add values to dictionary dynamically (for example, when reading a file).
+## if we nned to check whether there a key in dictionary, we can use 'key in d' syntax:
+
+print('key' in d)
+
+## output is True becoz key is present in d.
+
+if 'Peter' in phones:
+    print ("We know Peter's phone")
+else:
+    print ("We don't know Peter's phone")
+
+## output is : "We don't know Peter's phone"
+
+
+if 'Zoe' in phones:
+    print ("We know Zoe's phone")
+else:
+    print ("We don't know Zoe's phone")
+
+## in case we need to delete a value from a dictionary, use the 'del' command:
+
+print (phones)
+
+## output is: {'Zoe': '655-99-55', 'Alice': '165-88-56', 'Bill': '342-18-25', 'myself': '123-45-67'}
+
+del (phones['Zoe'])
+
+print (phones)
+
+## output is: {'Alice': '165-88-56', 'Bill': '342-18-25', 'myself': '123-45-67'}
+
+s = {'We tried list and we tried dicts also we tried Zen'}
