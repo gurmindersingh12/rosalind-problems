@@ -50,3 +50,49 @@ print(t2)
 
 u2 = t2.replace ('T', 'U')
 print(u2)
+
+
+############################################################################################################
+
+s = 'AAAACCCGGT'
+print (s)
+
+### complement mapping
+
+complement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'}
+
+### Find the complement of each nucleotide and reverse the string
+
+reverse_complement_s = "".join(complement[base] for base in reversed(s))
+
+## "".join(): Joins the complemented characters into a single string.
+
+## reversed(s): Reverses the input DNA string. 
+
+## 'complement[base] for base in reversed(s)': Replaces each nucleotide in the reversed string with its complement using the complement dictionary.
+
+
+print (reverse_complement_s)
+
+
+### problem dataset
+
+s = 'TAGTCACCTCCATAGCCAGGTGTGATTGTGGATGACCGCGTGTAAGGCCGTCGATATGCTATGTCGGTAAGTTACGTATTAATTACAAATGACGGGCGTAGGTGTTACTGCCGTAGCTTAGTCTCGTAACACGTATCTCTGCCACTCGCGTCCGGTGCCACTAAGCAACATAAAATGCAGCTCGAAGGATACGTCAATCACACTTTTGCACAAACAGTCCGTAATGTTTAGCAATATATAGAAGAATGTCCCGGAGGCATCCCTCATCGTGAACTGTGATGAGACGAAACAAATGCAGCAACCCTTACCGCATCGCTCATTGTTGTCAGTCGTCCCGCTCATAGTGATGGATCTGAGATCATGTCCTACATCCCTACGCTTCGTGCTATTCGTACTAAACTTCTACAATGCTCTGAAAAGAAAACTGGAGGCATATTTGGAGTGAATCCAAAAGGGGGGTTCCCTTGTGCTGTGAGGGTAGAGCAATGGAAGGCAAAGTTGTGCGGTTGTGACATCTCTGGTAGCTATCCTAGAAATAGGTTACGATTCTGTGAATGGCTTTATTCCTCAACGACGAATCGCATACTCTCATCTAATGTCCGACGGCAGTTACGGCCCCACACACGGGGACCAATGCTTAAAGGTGCTGTCTGTCTGAATCACCTAGGTCGACAACCCCAGGTAATGACAGAACTGGGCATGTACACGCTCTAATACATCGCGGTACTCTTATGTGGCTGAGTTCGACGATGACCTGGGGATGAATTGGATCAAGAGAACCTTAGTACCAAAAGGGTACTCTACTCTCTATACTAGCAATTGCGCGATCACTTATTCGTATATGTCGATCGTGACACGGTCGCCGCCCGCCCACACTTACTGACGAGTCCAACAGGCAAATCTAACATCGCGGCGTAAAAGAAATGGCTGTTGT'
+
+
+print (s)
+
+### complement mapping
+
+complement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'}
+
+### Find the complement of each nucleotide and reverse the string
+
+reverse_complement_s = "".join(complement[base] for base in reversed(s))
+
+
+print (reverse_complement_s)
+
+######################################################################################################################
+
+
