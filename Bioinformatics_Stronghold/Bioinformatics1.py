@@ -96,3 +96,74 @@ print (reverse_complement_s)
 ######################################################################################################################
 
 
+#######################################################################################################
+######################    Rabbits and Recurrence Relations  ###########################################
+#######################################################################################################
+
+## Recurrence relation and Fibonacci sequence
+
+##  In case of Fibonacci's rabbits, any given month will contain the rabbits that were alive the previous month, plus any new
+## offspring. A key observation is that the number of offspring in any month is equal to the number of rabbits that were alive
+## two months prior. As a result, if F(n) respresents the number of rabbit pairs after n-th month, then we obtain the Fibonacci
+## sequence having terms Fn that are defined by the recurrence relation; F(n) = F(n-1) + F(n-2) (with F1=F2=1 to initiate the sequence). 
+
+
+## Problem
+
+## The total number of rabbit pairs that will be present after n months, if we begin with 1 pair and in each generation, 
+## every pair of reproduction-age rabbits produces a litter of k rabbit pairs (instead of only 1 pair).
+
+n = 5
+k = 3
+
+## Problem understanding ##
+
+## we can start with 1 rabbit in the first month month.
+## rabbits mature after 1 month i.e., they start reproducing in their second month.
+## each mature pair produce `k` new pairs of rabbits per month.
+## the task is to calculate total number of rabbit pairs after `n` months.
+
+
+## Formula:
+## this problem can be modeled using a modified Fibanacci recurrence.
+
+# F(n) = F(n-1) + k.F(n-2)
+
+## F(n-1) is the rabbit pair alive from previous month
+## k.F(n-2) is the rabbit pairs produced by mature rabbits.
+
+### Manual way
+
+## n=5, k=3; assumption F1=F2=1
+## Month 1: F(1) = 1
+## Month 2: F(2) = 1
+## Month 3: F(3) = F(2) + 3.F(1) = 1+3 = 4
+## Month 4: F(4) = F(3) + 3.F(2) = 4+3 = 7
+## Month 5: F(5) = F(4) + 3.F(3) = 7+12 = 19
+
+## output answer = 19
+
+n = 5
+k = 3
+
+def rabbit_pair(n, k):
+    ## intialize the first 2 months
+    if n == 1 or n == 2:
+        return 1
+    
+    ## variables to store F(n-1), F(n-2)
+
+    prev, curr = 1, 1
+
+    ## calculate rabbit pairs from month 3 to n
+    for _ in range(3, n+1):
+       next_val = curr + k.prev
+       prev, curr = curr, next_val
+
+    return curr
+
+## input values
+n, k = 5, 3
+print(rabbit_pair(5, 3))
+
+
