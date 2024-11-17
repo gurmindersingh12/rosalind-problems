@@ -179,3 +179,32 @@ n, k = 5, 3
 print(rabbit_pairs(5, 3))
 
 
+## Downloaded Dataset
+
+
+def rabbit_pairs(n, k):
+    ## intialize the first 2 months
+    if n == 1 or n == 2:
+        return 1
+    
+    ## variables to store F(n-1), F(n-2)
+
+    prev, curr = 1, 1
+    
+    ## calculate rabbit pairs from month 3 to n
+    for _ in range(3, n+1):
+       next_val = curr + k*prev
+       prev, curr = curr, next_val
+
+    return curr
+
+## input values
+n, k = 31, 2
+print(rabbit_pairs(31, 2))
+### output: 715827883
+
+
+#################################################################################################################
+#################################################################################################################
+
+
