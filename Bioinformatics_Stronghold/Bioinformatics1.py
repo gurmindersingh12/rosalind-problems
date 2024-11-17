@@ -146,7 +146,7 @@ k = 3
 n = 5
 k = 3
 
-def rabbit_pair(n, k):
+def rabbit_pairs(n, k):
     ## intialize the first 2 months
     if n == 1 or n == 2:
         return 1
@@ -154,16 +154,28 @@ def rabbit_pair(n, k):
     ## variables to store F(n-1), F(n-2)
 
     prev, curr = 1, 1
+    ## prev represents F(n−2): the number of rabbit pairs from two months ago.
+    ## curr represents F(n−1): the number of rabbit pairs from the previous month.
 
     ## calculate rabbit pairs from month 3 to n
     for _ in range(3, n+1):
-       next_val = curr + k.prev
+       next_val = curr + k*prev
        prev, curr = curr, next_val
+
+       ## next_val = curr + k * prev
+       ### Uses the formula: F(n)=F(n−1)+k⋅F(n−2)
+
+       ## prev, curr = curr, next_val
+       ## Updates the variables for the next iteration:
+       ## prev (F(n-2)) becomes the current value of curr.
+       ## curr (F(n-1)) becomes the newly calculated value, next_val.
 
     return curr
 
+## After the loop ends, curr will hold F(n)F(n), the total number of rabbit pairs in month n.
+
 ## input values
 n, k = 5, 3
-print(rabbit_pair(5, 3))
+print(rabbit_pairs(5, 3))
 
 
