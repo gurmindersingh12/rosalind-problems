@@ -255,15 +255,26 @@ fasta_dict = {}
 current_header =  None ## to keep track of the current header
 
 for line in rosalind_seq.strip().split("\n"):
-    ## if the line starts with ">", it is a header
-    current_header = line[1:] # remove the ">" to get the header name
-    fasta_dict[current_header] = ""  ## start a new entry in the dictionary
-else:
-    ## otherwise it a part of sequence, append it to current header.
-    fasta_dict[current_header] += line.strip()
+    if line.startswith(">"): ## it is a header
+        current_header = line[1:] # remove the ">" to get the header name
+        fasta_dict[current_header] = ""  ## start a new entry in the dictionary
+    else:
+        ## otherwise it a part of sequence, append it to current header.
+        fasta_dict[current_header] += line.strip()
 
 ## at this point fasta_dict{} contains headers as key and full sequences as values
 
 print(fasta_dict)
 
+## function to calculate GC content
+
+def calculate_gc_content(sequence):
+    g_count = sequence.count('G')
+    c_count = sequence.count('C')
+    return ((g_count + c_count)/len(sequence))*100 if sequence else 0
+
+## calculate and print GC content for GC content
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    print(f"{header}: {gc_content:.2f}%")
 
