@@ -278,3 +278,43 @@ for header, sequence in fasta_dict.items():
     gc_content = calculate_gc_content(sequence)
     print(f"{header}: {gc_content:.2f}%")
 
+
+
+#### explanation of the above code
+
+## Initializing Variables
+
+## fasta_dict{}: An empty dictionary that will store the FASTA data.
+## we will add headers as keys (e.g., "Rosalind_6404"), and the corresponding sequences as the values.
+
+## current_header: A variable to keep track of the most recent header while processing the file.
+## Initially set to `None`` because no header has been encountered yet.
+
+## rosalind_seq.strip(): Removes any extra blank lines or whitespace at the start/end of the input string.
+
+## .split("\n"): Splits the input string into individual lines based on newlines (\n).
+
+## for line in ...: Iterates through each line of the input FASTA data.
+
+## line.startswith(">"): Identifies header lines, which always start with > in FASTA format.
+
+## line[1:]: Removes the > symbol to extract the header name (e.g., "Rosalind_6404").
+
+## fasta_dict[current_header] = "": Adds the header as a key in the dictionary and initializes an empty string for its sequence.
+
+
+## else:
+#   fasta_dict[current_header] += line.strip()
+
+## the above code sequence lines (i.e., lines that don’t start with >).
+
+## line.strip(): Removes any whitespace or newline characters from the sequence line.
+## fasta_dict[current_header] += ...: Concatenates the sequence line to the current header's sequence in the dictionary.
+
+## fasta_dict.items(): Retrieves all header-sequence pairs from the dictionary.
+
+## calculate_gc_content(sequence): Calculates the GC content for the current sequence.
+
+## print(f"..."): Prints the header and the GC content (formatted to 2 decimal places).
+
+
