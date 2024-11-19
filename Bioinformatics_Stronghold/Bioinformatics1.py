@@ -279,6 +279,18 @@ for header, sequence in fasta_dict.items():
     print(f"{header}: {gc_content:.2f}%")
 
 
+max_gc_header = None
+max_gc_content = 0
+
+
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    if gc_content > max_gc_content:
+        max_gc_content = gc_content
+        max_gc_header = header
+
+print(f"Highest GC Content:")
+print(f"{max_gc_header}: {max_gc_content:.6f}%")
 
 #### explanation of the above code
 
