@@ -34,7 +34,10 @@ count_C = dataset.count('C')
 
 print (count_A, count_C, count_G, count_T)
 
-#########################################################################################################################
+######################################################################################################################
+######################################################################################################################
+######################################################################################################################
+
 
 
 t = "GATGGAACTTGACTACGTAAATT"
@@ -52,7 +55,10 @@ u2 = t2.replace ('T', 'U')
 print(u2)
 
 
-############################################################################################################
+#####################################################################################################################
+######################################################################################################################
+######################################################################################################################
+
 
 s = 'AAAACCCGGT'
 print (s)
@@ -94,6 +100,10 @@ reverse_complement_s = "".join(complement[base] for base in reversed(s))
 print (reverse_complement_s)
 
 ######################################################################################################################
+######################################################################################################################
+######################################################################################################################
+
+
 
 
 #######################################################################################################
@@ -206,6 +216,8 @@ print(rabbit_pairs(31, 2))
 
 #################################################################################################################
 #################################################################################################################
+#################################################################################################################
+
 
 
 #####################################################################################
@@ -323,14 +335,41 @@ print(f"{max_gc_header}: {max_gc_content:.6f}%")
 ## line.strip(): Removes any whitespace or newline characters from the sequence line.
 ## fasta_dict[current_header] += ...: Concatenates the sequence line to the current header's sequence in the dictionary.
 
-## fasta_dict.items(): Retrieves all header-sequence pairs from the dictionary.
+## fasta_dict.items(): Retrieves all header-sequence pairs from the dictionary. basically act as `print` command.
 
 ## calculate_gc_content(sequence): Calculates the GC content for the current sequence.
 
 ## print(f"..."): Prints the header and the GC content (formatted to 2 decimal places).
 
+### now the goal is to identify the sequence with maximum/highest GC content
 
-#### Rosalind problem dataset
+## so we created a variable called "max_gc_header". this variable keep a track of the header (or we should say key) that correspond
+## to the sequence (or we can values) with the highest GC content found so far. we set to `None` in the beginning because in the
+## start no sequence was processed.
+
+## we also need to create another variable called "max_gc_content". this variable store the highest GC value 
+## encountered during the loop. we set to `0` as no GC content has been calculated yet.
+
+## `for header, sequence in fasta_dict.items():` we are initiating `for` loop here to Iterates through each key-value pair.
+## For each header-sequence pair, the GC content of the sequence will be calculated.
+
+## after that we will call the function `calculate_gc_content` that we defined above to calculate the GC content
+
+## after that `if` statement was used: `if gc_content > max_gc_content`: this statement help us to compare the GC content of
+## current sequence (which is store as `gc_content`) with the highest GC contnet we found so far (which is stored as `max_gc_content`).
+## if above statement comes out to be `TRUE` then it will update the `max_gc_content` with the `current_gc_content`, and the same
+## time it will update the headers, i.e., `max_gc_header` to current `header`.
+
+
+## the `f` in the `f"..."` is used to create an f-string in python. An f-string (formatted string literal) allows us to embed
+## expressions, variables, or calculations directly within a string. we can can include variables or expressions 
+## enclosed in curly braces {}. Python evaluates the expressions and inserts their values into the string at runtime.
+
+## we have used this code above    `print(f"{header}: {gc_content:.2f}%")`
+## if we dont use f-string, then we have to write it something like that
+## print (header + ": " + str(gc_content) + %)
+
+#### Rosalind problem dataset-1
 
 rosalind_seq = """>Rosalind_8361
 AGCGAGACTTTTCTGTTGTGTACAGGTACTCGGTTACCGGGCTTGTGCAATTGGCTACGC
@@ -525,6 +564,21 @@ for header, sequence in fasta_dict.items():
 
 
 
+max_gc_header = None
+max_gc_content = 0
+
+
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    if gc_content > max_gc_content:
+        max_gc_content = gc_content
+        max_gc_header = header
+
+print(f"Highest GC Content:")
+print(f"{max_gc_header}: {max_gc_content:.6f}%")
+
+
+
 seq2_fasta = """>Rosalind_3663
 GCTCTGGAGATTATGGGCCTTAGCATAGTCCGAAAGATGGTATGTTCTAAGAATTTCGCC
 AAACTAACGACGTATCATCCTTAGTTGCATTAGCCTCTCTCGTGCCGCCGGCCGGTCCCT
@@ -692,6 +746,12 @@ ATTCAGCAGTTTTTAGA
 """
 
 
+print(seq2_fasta)
+
+fasta_dict = {}
+
+current_header =  None
+
 for line in seq2_fasta.strip().split("\n"):
     if line.startswith(">"):
         current_header = line[1:]
@@ -700,6 +760,32 @@ for line in seq2_fasta.strip().split("\n"):
         fasta_dict[current_header] += line.strip()
 
 print(fasta_dict)
+
+def calculate_gc_content(sequence):
+    g_count = sequence.count('G')
+    c_count = sequence.count('C')
+    return ((g_count + c_count)/len(sequence))*100 if sequence else 0
+
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    print(f"{header}: {gc_content:.6f}%")
+
+
+
+max_gc_header = None
+max_gc_content = 0
+
+
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    if gc_content > max_gc_content:
+        max_gc_content = gc_content
+        max_gc_header = header
+
+print(f"Highest GC Content:")
+print(f"{max_gc_header}: {max_gc_content:.6f}%")
+
+
 
 
 
@@ -871,6 +957,12 @@ TAGCTGCCCACCATGGACGCATGAGGATGAGGTCAATATTGCTATACGCCTCCAAGAGAT
 TCTCACTACAACCATG
 """
 
+print(seq3_fasta)
+
+fasta_dict = {}
+
+current_header =  None
+
 for line in seq3_fasta.strip().split("\n"):
     if line.startswith(">"):
         current_header = line[1:]
@@ -880,6 +972,34 @@ for line in seq3_fasta.strip().split("\n"):
 
 print(fasta_dict)
 
+def calculate_gc_content(sequence):
+    g_count = sequence.count('G')
+    c_count = sequence.count('C')
+    return ((g_count + c_count)/len(sequence))*100 if sequence else 0
 
-### we need to select string with the highest GC-content
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    print(f"{header}: {gc_content:.6f}%")
+
+
+
+max_gc_header = None
+max_gc_content = 0
+
+
+for header, sequence in fasta_dict.items():
+    gc_content = calculate_gc_content(sequence)
+    if gc_content > max_gc_content:
+        max_gc_content = gc_content
+        max_gc_header = header
+
+print(f"Highest GC Content:")
+print(f"{max_gc_header}: {max_gc_content:.6f}%")
+
+
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+
+
 
