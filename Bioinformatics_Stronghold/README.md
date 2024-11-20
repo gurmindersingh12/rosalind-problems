@@ -12,27 +12,23 @@ Input data is typically provided in FASTA or plain-text formats. Custom parsing 
 ### Solutions
 
 ##### 1. Counting DNA Nucleotides </p>
-Problem: Count occurrences of A, T, G, and C in a given DNA string.
+Problem: Count occurrences of A, T, G, and C in a given DNA string. </p>
 Solution: Using Python’s str.count() method.
 
-2. Transcribing DNA to RNA
+##### 2. Transcribing DNA to RNA </p>
+Problem: Convert a DNA sequence to its RNA equivalent by replacing T with U. </p>
+Solution: Implemented using str.replace().
 
-    Problem: Convert a DNA sequence to its RNA equivalent by replacing T with U.
-    Solution: Implemented using str.replace().
+##### 3. Computing Reverse Complement </p>
+Problem: Generate the reverse complement of a DNA sequence using complement mappings. </p>
+Solution: A dictionary maps A ↔ T and C ↔ G, with Python’s reversed() and join() used to reverse and complement the sequence.
 
-3. Computing Reverse Complement
+##### 4. Rabbits and Recurrence Relations </p>
+Problem: Solve a modified Fibonacci problem to predict rabbit population growth over months. </p>
+Solution: A dynamic programming approach using recurrence relations: </p>
+        F(n)=F(n−1)+k×F(n−2) </p>
+        F(n)=F(n−1)+k×F(n−2)
 
-    Problem: Generate the reverse complement of a DNA sequence using complement mappings.
-    Solution: A dictionary maps A ↔ T and C ↔ G, with Python’s reversed() and join() used to reverse and complement the sequence.
-
-4. Rabbits and Recurrence Relations
-
-    Problem: Solve a modified Fibonacci problem to predict rabbit population growth over months.
-    Solution: A dynamic programming approach using recurrence relations:
-    F(n)=F(n−1)+k×F(n−2)
-    F(n)=F(n−1)+k×F(n−2)
-
-5. Computing GC Content
-
-    Problem: Calculate the percentage of G and C bases in DNA sequences provided in FASTA format.
-    Solution: A function iterates through sequences, calculates GC content, and identifies the sequence with the highest GC content.
+##### 5. Computing GC Content </p>
+Problem: Calculate the percentage of G and C bases in DNA sequences provided in FASTA format. </p>
+Solution: A function iterates through sequences, calculates GC content, and identifies the sequence with the highest GC content.
