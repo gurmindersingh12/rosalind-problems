@@ -13,15 +13,15 @@ Input data is typically provided in FASTA or plain-text formats. Custom parsing 
 
 ##### 1. Counting DNA Nucleotides </p>
 `Problem`: Count occurrences of A, T, G, and C in a given DNA string. </p>
-`Solution`: Using Python’s str.count() method.
+`Solution`: Using Python’s `str.count()` method.
 
 ##### 2. Transcribing DNA to RNA </p>
 `Problem`: Convert a DNA sequence to its RNA equivalent by replacing T with U. </p>
-`Solution`: Implemented using str.replace().
+`Solution`: Implemented using `str.replace()`.
 
 ##### 3. Computing Reverse Complement </p>
 `Problem`: Generate the reverse complement of a DNA sequence using complement mappings. </p>
-`Solution`: A dictionary maps A ↔ T and C ↔ G, with Python’s reversed() and join() used to reverse and complement the sequence.
+`Solution`: A dictionary maps A ↔ T and C ↔ G, with Python’s `reversed()` and `join()` used to reverse and complement the sequence.
 
 ##### 4. Rabbits and Recurrence Relations </p>
 `Problem`: Solve a modified Fibonacci problem to predict rabbit population growth over months. </p>
