@@ -11,7 +11,7 @@ Input data is typically provided in FASTA or plain-text formats. Custom parsing 
 
 ### Solutions
 
-1. Counting DNA Nucleotides
+##### 1. Counting DNA Nucleotides </p>
 Problem: Count occurrences of A, T, G, and C in a given DNA string.
 Solution: Using Python’s str.count() method.
 
