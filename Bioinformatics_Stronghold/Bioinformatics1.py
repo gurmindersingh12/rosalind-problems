@@ -64,18 +64,32 @@ s = 'AAAACCCGGT'
 print (s)
 
 ### complement mapping
+## here we need to craete a dictionary where we we will define key and its corresponding values
 
 complement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'}
+
+## in above code we assign complementary base info to each of the key we define, i.e., A to T, and so on.
+## we neeed to use comma (,) to separate the key-value pair.
 
 ### Find the complement of each nucleotide and reverse the string
 
 reverse_complement_s = "".join(complement[base] for base in reversed(s))
 
+## reversed(s): Reverses the input DNA string. for example, if string is ATGCTT, then after this code it will become TTCGAT.
+
+## `for base in reversed(s)`: `for` loop will be used that we will iterates over each character in reversed(s).
+## `base` is the variable that represent the character in the reverse sequence order. for example fo rreverse sequence `TTCGAT`, `base` will
+##  take values `T`, then `T`, then `C`, and so on.
+
+## 'complement[...]': Looks for complementary base for the current `base` using the `complement` dictionary that we defined above.
+## for example, `base = T`, `complement['T']` is 'A', similarly for `base = C`, `complement['C']` is G, and so on.
+
+## `complement[base] for base in reversed(s):` this will create a list of complementary sequences in the reverse order.
+
 ## "".join(): Joins the complemented characters into a single string.
-
-## reversed(s): Reverses the input DNA string. 
-
-## 'complement[base] for base in reversed(s)': Replaces each nucleotide in the reversed string with its complement using the complement dictionary.
+## "" = an empty string that act as separator.
+## join(): combines the list of complementary sequences into a single string. for example, if list is 
+## ['A', 'A', 'G', 'C', 'T', 'A'], the result will be the string, i.e, 'AAGCTA'
 
 
 print (reverse_complement_s)
@@ -95,7 +109,7 @@ complement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'}
 ### Find the complement of each nucleotide and reverse the string
 
 reverse_complement_s = "".join(complement[base] for base in reversed(s))
-
+### please read above to understand this code.
 
 print (reverse_complement_s)
 
@@ -112,7 +126,7 @@ print (reverse_complement_s)
 
 ## Recurrence relation and Fibonacci sequence
 
-##  In case of Fibonacci's rabbits, any given month will contain the rabbits that were alive the previous month, plus any new
+## In case of Fibonacci's rabbits, any given month will contain the rabbits that were alive the previous month, plus any new
 ## offspring. A key observation is that the number of offspring in any month is equal to the number of rabbits that were alive
 ## two months prior. As a result, if F(n) respresents the number of rabbit pairs after n-th month, then we obtain the Fibonacci
 ## sequence having terms Fn that are defined by the recurrence relation; F(n) = F(n-1) + F(n-2) (with F1=F2=1 to initiate the sequence). 
