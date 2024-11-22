@@ -11,4 +11,4 @@ The goal of this repository is to:
 1. Solve bioinformatics challenges to strengthen programming and algorithmic skills.
 2. Provide reproducible solutions for anyone learning bioinformatics.
 3. Showcase clean, efficient Python code for problems related to genomics and computational biology.
-4. 
+4. Build a repository of well-documented solutions for future reference and learning.
