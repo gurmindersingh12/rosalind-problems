@@ -1017,3 +1017,41 @@ print(f"{max_gc_header}: {max_gc_content:.6f}%")
 
 
 
+###############################################################
+#############   Counting Point Mutations    ###################
+###############################################################
+
+## Hamming Distance. let's say we have two strings of equal lengths.
+## Hamming distance is a metric used to measure the number of differences between two strings of equal length.
+## In context of genetics and bioinformatics, it is often used to count point mutations or single nucleotide change
+## between two DNA sequences of same length.
+
+## we can use Hamming distance to:
+## 1. count point mutations
+## 2. error detection in DNA sequencing data.
+## 3. comparitive analysis to compare genes or protein sequneces for similarities and variations.
+
+## Important points:
+## both sequences must of equal length.
+## each position is compared independently.
+## insertions and deletions (indels) are not handled by hamming distance.
+## for sequences with differing lenghths, we can use metrics like Levenshtein distance.
+
+### Problem
+
+s = 'GAGCCTACTAACGGGAT'
+print(s)
+
+t = 'CATCGTAATGACGGCCT'
+print(t)
+
+def hamming_distance(s, t):
+    if len(s) != len(t):
+        raise ValueError("Sequences must be of equal length")
+    distance = 0
+    for char1, char2 in zip(s, t):
+        if char1 != char2:
+            distance += 1
+    return distance
+
+print(hamming_distance(s, t))
