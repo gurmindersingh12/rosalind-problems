@@ -1055,3 +1055,5 @@ def hamming_distance(s, t):
     return distance
 
 print(hamming_distance(s, t))
+
+## output is 7
