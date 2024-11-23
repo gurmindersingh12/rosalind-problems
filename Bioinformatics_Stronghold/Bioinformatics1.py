@@ -1084,5 +1084,41 @@ print(hamming_distance(s, t))
 ###########################################################################################################################################
 ###########################################################################################################################################
 
+##############################################################################################
+###############################   Mendel's First Law   #######################################
+##############################################################################################
+
+## Law of segregation: Every organism possesses a pair of alleles fo a given trait. If both alleles for a given trait is same,
+## then individual is homozygous (AA or aa) for that trait, and if alleles differ, then the individual is heterozygous (Aa).
+
+## Homozygous dominant (AA), Homozygous recessive (aa). Punnett square can be used to represent different possibilities of
+## an individual's inheritance having two alleles from its parents.
+
+## Probability ##
+## Probability is the mathematical study of randomly occuring phenomena. visit this read more: https://rosalind.info/problems/iprb/
+
+## Problem
+
+## Three positive integers k, m, and n, representing a population containing k+m+n organisms
+## k = individuals are homozygous dominant for a factor
+## m = are heterozygous
+## n = are homozygous recessive
+
+## k = 2, m = 2, n = 2
+## Total (t) = k + m + n = 2 + 2 + 2 = 6
+
+## we need to find out the probability that two randomly selected mating organisms will produce an individual 
+## possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
+
+## assume we have individuals inthe population that possesses AA, Aa, and aa genotypes.
+
+## only the aa x aa mating will not produce dominant phenotype. in all other cases, any two organisms can produce that but
+## with diffrent probabilities for dominant phenotype.
+
+## First of all we need to identify all the mating pairs
+
+
+
+
 
 
