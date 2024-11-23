@@ -1084,5 +1084,83 @@ print(hamming_distance(s, t))
 ###########################################################################################################################################
 ###########################################################################################################################################
 
+##############################################################################################
+###############################   Mendel's First Law   #######################################
+##############################################################################################
+
+## Law of segregation: Every organism possesses a pair of alleles fo a given trait. If both alleles for a given trait is same,
+## then individual is homozygous (AA or aa) for that trait, and if alleles differ, then the individual is heterozygous (Aa).
+
+## Homozygous dominant (AA), Homozygous recessive (aa). Punnett square can be used to represent different possibilities of
+## an individual's inheritance having two alleles from its parents.
+
+## Probability ##
+## Probability is the mathematical study of randomly occuring phenomena. visit this read more: https://rosalind.info/problems/iprb/
+
+## Problem
+
+## Three positive integers k, m, and n, representing a population containing k+m+n organisms
+## k = individuals are homozygous dominant for a factor
+## m = are heterozygous
+## n = are homozygous recessive
+
+## k = 2, m = 2, n = 2
+## Total (t) = k + m + n = 2 + 2 + 2 = 6
+
+## we need to find out the probability that two randomly selected mating organisms will produce an individual 
+## possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
+
+## assume we have individuals inthe population that possesses AA, Aa, and aa genotypes.
+
+## only the aa x aa mating will not produce dominant phenotype. in all other cases, any two organisms can produce that but
+## with diffrent probabilities for dominant phenotype.
+
+## First of all we need to identify all the mating pairs (6 pairs)
+#1 AA x AA
+#2 AA x Aa or Aa x AA
+#3 AA x aa or aa x AA
+#4 Aa x Aa
+#5 Aa x aa or aa x Aa
+#6 aa x aa
+
+## Now we need to calculate the probability of selecting each mating pair and the probability of that 
+## pair to produce dominant phenotype.
+
+## Probability of selecting each pair
+# Pair 1: `AA x AA` = (k/t)x[(k-1)/(t-1)] = (2/6)x(1/5) = 2/30
+# Probability that an individuals will be dominant is 100% , i.e., 1.0, beacsue all individuals from Pair 1, wil be `AA`
+
+# Pair 2: `AA x Aa` or `Aa x AA` = 2x((k/t)x((k-1)/(t-1))) = 2x(2/6)x(2/5) = 8/30
+# Probability that an individuals will be dominant is 100% , i.e., 1.0, beacsue all individuals from Pair 2, wil be either `AA` or `Aa`
+
+# Pair 3: `AA x aa` or `aa x AA` = 2x((k/t)x((k-1)/(t-1))) = 2x(2/6)x(2/5) = 8/30
+# Probability that an individuals will be dominant is 100% , i.e., 1.0, beacsue all individuals from Pair 3, wil be `Aa`
+
+# Pair 4: `Aa x Aa` = (k/t)x[(k-1)/(t-1)] = (2/6)x(1/5) = 2/30
+# Probability that an individuals will be dominant is 75% , i.e., 0.75, beacsue all individuals from Pair 4, wil be `AA`, `Aa`, or `aa`
+
+# Pair 5: `Aa x aa` or `aa x Aa` = 2x((k/t)x((k-1)/(t-1))) = 2x(2/6)x(2/5) = 8/30
+# Probability that an individuals will be dominant is 50% , i.e., 0.5, beacsue all individuals from Pair 5, wil be `AA` or `aa`
+
+# Pair 6: `aa x aa` = (k/t)x[(k-1)/(t-1)] = (2/6)x(1/5) = 2/30
+# Probability that an individuals will be dominant is 0% , i.e., 0, beacsue all individuals from Pair 6, wil be `aa`
+
+## For each pair type, we multiply the probability of selecting that pair by the probability that the offspring will display the dominant phenotype. 
+## The total probability is:
+
+## Dominant probability = (2/30) x 1 + (8/30) x 1 + (8/30) x 1 + (2/30) x 0.75 + (8/30) x 0.5 + (2/30) x 0.0 = 23.5/30 = 0.78333
+
+#########################################################################################################################
+
+## Python codes
+
+
+
+
+
+###########################################################################################################################################
+###########################################################################################################################################
+###########################################################################################################################################
+
 
 
