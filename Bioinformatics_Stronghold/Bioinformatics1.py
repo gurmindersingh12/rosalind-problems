@@ -1155,6 +1155,71 @@ print(hamming_distance(s, t))
 ## Python codes
 
 
+# Input values
+k, m, n = 2, 2, 2
+
+# Total population
+total = k + m + n
+
+## k = AA, m = Aa, n = aa
+
+
+# Probabilities of mating pair types
+p_kk = (k / total) * ((k - 1) / (total - 1))
+p_km = 2 * (k / total) * (m / (total - 1))
+p_kn = 2 * (k / total) * (n / (total - 1))
+p_mm = (m / total) * ((m - 1) / (total - 1))
+p_mn = 2 * (m / total) * (n / (total - 1))
+p_nn = (n / total) * ((n - 1) / (total - 1))
+
+# Dominant phenotype probabilities
+dominant_prob = (
+    p_kk * 1.0 +  # 100% dominant
+    p_km * 1.0 +  # 100% dominant
+    p_kn * 1.0 +  # 100% dominant
+    p_mm * 0.75 + # 75% dominant
+    p_mn * 0.5 +  # 50% dominant
+    p_nn * 0.0    # 0% dominant
+)
+
+print(f"Probability of dominant phenotype: {dominant_prob:.5f}")
+
+# Probability of dominant phenotype: 0.78333
+
+
+
+## problem dataset
+
+# Input values
+k, m, n = 28, 24, 15
+
+# Total population
+total = k + m + n
+
+## k = AA, m = Aa, n = aa
+
+
+# Probabilities of mating pair types
+p_kk = (k / total) * ((k - 1) / (total - 1))
+p_km = 2 * (k / total) * (m / (total - 1))
+p_kn = 2 * (k / total) * (n / (total - 1))
+p_mm = (m / total) * ((m - 1) / (total - 1))
+p_mn = 2 * (m / total) * (n / (total - 1))
+p_nn = (n / total) * ((n - 1) / (total - 1))
+
+# Dominant phenotype probabilities
+dominant_prob = (
+    p_kk * 1.0 +  # 100% dominant
+    p_km * 1.0 +  # 100% dominant
+    p_kn * 1.0 +  # 100% dominant
+    p_mm * 0.75 + # 75% dominant
+    p_mn * 0.5 +  # 50% dominant
+    p_nn * 0.0    # 0% dominant
+)
+
+print(f"Probability of dominant phenotype: {dominant_prob:.5f}")
+
+## Probability of dominant phenotype: 0.83989
 
 
 
