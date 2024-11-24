@@ -32,3 +32,9 @@ Input data is typically provided in FASTA or plain-text formats. Custom parsing 
 ##### 5. Computing GC Content </p>
 `Problem`: Calculate the percentage of G and C bases in DNA sequences provided in FASTA format. </p>
 `Solution`: A function iterates through sequences, calculates GC content, and identifies the sequence with the highest GC content.
+
+##### 6. Mendel's First Law </p>
+`Problem`: Calculate the probability of two randomly selected organisms producing an offspring with a dominant phenotype. </p>
+`Solution`: Calculates the probability of each mating pair and the likelihood of producing offspring with at least one dominant allele. </p>
+`Key Formula`: <i>P</i> = sum of probabilities for all pair types weighted by their respective dominant outcomes.
+
